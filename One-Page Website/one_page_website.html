@@ -29,6 +29,44 @@
 			</div>
 
 			<!-- Put your kitty up for adoption section w/ pictures-->
+			<!--Thumbnails for the lightbox-->
+			<div class="row">
+				<div class="column">
+					<img src="./images/kitty_1_small.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+				</div>
+				<div class="column">
+					<img src="./images/kitty_2_small.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+				</div>
+				<div class="column">
+					<img src="./images/kitty_3_small.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+				</div>
+			</div>
+
+			<!--Modal/Lightbox-->
+			<div id="myModal" class="modal">
+				<span class="close cursor" onclick="closeModal()">&times;</span>
+				<div class="modal-content">
+
+					<div class="mySlides">
+						<div class="numberText">1 / 3</div>
+						<img src="./images/kitty_1.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numberText">2 / 3</div>
+						<img src="./images/kitty_2.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numberText">3 / 3</div>
+						<img src="./images/kitty_3.jpg" style="width:100%">
+					</div>
+
+					<!--Next & Previous controls-->
+				</div>
+			</div>
+
+
 			<div id="rehome">
 				<h2>Need to rehome a kitty? Choose our friendly environment!</h2>
 				<img src="images/kitty_1.jpg" alt="adorable kitty"><br>
