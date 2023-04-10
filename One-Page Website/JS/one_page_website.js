@@ -43,3 +43,11 @@ var i;
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+function validateForm() {
+  let x = document.forms["careerForm"]["First_Name", "Last_Name", "Phone_Number", "App_Data", "Email"].value;
+  if (x == "") {
+    alert("All fields must be filled out");
+    return false;
+  }
+}

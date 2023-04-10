@@ -12,6 +12,14 @@
 		</head>
 
 		<body>
+
+			<script>//fade out class added for fade effect
+				document.body.classList.add('fade-out');
+				
+				window.addEventListener('DOMContentLoaded', () => {
+					document.body.classList.remove('fade-out');
+					});//removing fade out class after execution
+			</script>
 		
 			<!-- NAV -->
 			<nav>
@@ -31,7 +39,7 @@
 
 			<!-- Put your kitty up for adoption section w/ pictures-->
 			<!--Thumbnails for the lightbox-->
-			<h1>Need to rehome a kitty? Choose us!</h1>
+			<h1 style="font-size: 3vw;">Need to rehome a kitty? Choose us!</h1>
 			<h3>These are some of our happy kitties!</h3>
 			<div class="row">
 				<div class="column">
@@ -92,9 +100,10 @@
 			<div id="careers">
 				<h2>Wanna work with us and our kitties? Send us your info!</h2>
 				<div class="career_form">
-					<form action="" method="get">
+					<form name="careerForm" action="" onsubmit="return validateForm()" method="get">
 						First Name:<input type ="text" name="First_Name"><br>
 						Last Name:<input type ="text" name="Last_Name"><br>
+						Phone Number:<input type="tel" name="Phone_Number" placeholder="123-867-5309" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
 						<label for="Application">Additional Application Information Here:</label><br>
 						<textarea id="Application" name="App_Data" rows="4" cols="50"></textarea><br>
 						Email:<input type = "email" name="Email"><br>
