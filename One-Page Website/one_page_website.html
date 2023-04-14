@@ -5,6 +5,7 @@
 			<meta charset="utf-8">
 			<link rel="stylesheet" href="css/one_page_website.css">
 			<script src="./JS/one_page_website.js" defer></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 			<div id="home">
 				<h1>Kitty Cat Adoption Center!</h1>
 			</div>
@@ -12,6 +13,14 @@
 		</head>
 
 		<body>
+
+			<script>//fade out class added for fade effect
+				document.body.classList.add('fade-out');
+				
+				window.addEventListener('DOMContentLoaded', () => {
+					document.body.classList.remove('fade-out');
+					});//removing fade out class after execution
+			</script>
 		
 			<!-- NAV -->
 			<nav>
@@ -20,6 +29,11 @@
 					<a href="#myModal">Rehome a Kitty!</a>|
 					<a href="#careers">Careers</a>|
 			</nav>
+
+			<!--animated page element-->
+			<img class="moving" src="./images/kitty_1_small.jpg">
+			<!--zooming page element-->
+			<img class="zooming" src="./images/kitty_2_small.jpg">
 
 			<!-- Cats available to adopt section w/ videos-->
 			<div id="adopt">
@@ -31,7 +45,8 @@
 
 			<!-- Put your kitty up for adoption section w/ pictures-->
 			<!--Thumbnails for the lightbox-->
-			<h1>Need to rehome a kitty? Choose us!</h1>
+			<h1 style="font-size: 3vw;">Need to rehome a kitty? Choose us!</h1>
+			<hr> <!--This is the horizontal rule tag!-->
 			<h3>These are some of our happy kitties!</h3>
 			<div class="row">
 				<div class="column">
@@ -92,15 +107,49 @@
 			<div id="careers">
 				<h2>Wanna work with us and our kitties? Send us your info!</h2>
 				<div class="career_form">
-					<form action="" method="get">
+					<form name="careerForm" action="" onsubmit="return validateForm()" method="get">
 						First Name:<input type ="text" name="First_Name"><br>
 						Last Name:<input type ="text" name="Last_Name"><br>
+						Phone Number:<input type="tel" name="Phone_Number" placeholder="123-867-5309" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
 						<label for="Application">Additional Application Information Here:</label><br>
 						<textarea id="Application" name="App_Data" rows="4" cols="50"></textarea><br>
 						Email:<input type = "email" name="Email"><br>
 						<input type ="submit" value="Submit">
 				</div>
 					
+			</div>
+
+			<!--Popup form section-->
+			<!--Button to open popup form-->
+			<button class="open-button" onclick="openForm()">Any feedback or comments? Click here!</button>
+
+			<!-- The form-->
+			<div class="form-popup" id="myForm">
+			  <form action="/action_page.php" class="form-container">
+				<h1>Login</h1>
+
+				<label for="email"><b>Email</b></label>
+				<input type="text" placeholder="Enter Email" name="email" required><br>
+
+				<label for="comments">Write your feedback/comments here!</label><br>
+				<textarea id="comments" name="App_Data" rows="4" cols="50"></textarea><br>
+
+				<button type="submit" class="btn">Submit!</button>
+				<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+			  </form>
+			</div>
+
+			<!--Automatic slideshow-->
+			<div id="slideshow">
+				  <div>
+					<img class="demo" src="./images/kitty_2_small.jpg">
+				  </div>
+				  <div>
+					<img class="demo" src="./images/kitty_3_small.jpg">
+				  </div>
+				  <div>
+					A very cool slideshow featuring some of our cutest kitties :)
+				  </div>
 			</div>
 		</body>
 
@@ -109,6 +158,5 @@
 				Find us on social media!<br>
 				Kitty Cat Rescue Center&copy;
 			</p>
-		</footer>
 			
 	</html>
