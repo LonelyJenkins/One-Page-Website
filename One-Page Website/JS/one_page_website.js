@@ -70,3 +70,16 @@ setInterval(function() {
   .end()
   .appendTo('#slideshow');
 }, 3000);
+
+function colorChange()
+{
+  let currentColor = document.getElementById("title").style.color;
+
+  if (currentColor !== "blue")
+  document.getElementById("title").style.color="blue";
+
+  else
+  {
+    document.getElementById("title").style.color="green";
+  }
+}
